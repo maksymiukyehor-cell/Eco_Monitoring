@@ -1,0 +1,56 @@
+// create
+
+{
+  "station_id": "SAVEDNIPRO_20081",
+  "measurement_time": "2025-10-16T12:00:00Z",  // можна прибрати, тоді встане поточний час
+  "pollutants": [
+    {
+      "pollutant": "Temperature",
+      "value": 22.5,
+      "unit": "Celcius",
+      "averaging_period": "5 minutes",
+      "quality_flag": "valid"
+    },
+    {
+      "pollutant": "PM2.5",
+      "value": 15.2,
+      "unit": "ug/m3",
+      "averaging_period": "2 minutes",
+      "quality_flag": "valid"
+    }
+  ]
+}
+
+// read_1
+
+http://localhost:3000/api/measurements/read/SAVEDNIPRO_20081?pollutant=Temperature
+
+// read_2
+
+http://localhost:3000/api/measurements
+
+// update
+
+http://localhost:3000/api/measurements/SAVEDNIPRO_20081
+
+{
+  "measurement_time": "2025-10-16T22:00:00Z",
+  "pollutants": [
+    {
+      "pollutant": "Temperature",
+      "value": 99,
+      "unit": "Celcius",
+      "averaging_period": "5 minutes",
+      "quality_flag": "valid"
+    }
+  ]
+}
+
+
+// delete
+
+http://localhost:3000/api/measurements/SAVEDNIPRO_20081
+
+{
+  "measurement_time": "2025-10-16T23:00:00Z"
+}

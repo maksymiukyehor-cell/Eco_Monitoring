@@ -1,0 +1,317 @@
+/* === GLOBAL LAYOUT === */
+
+.dashboard-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+
+/* === TOPBAR === */
+
+.topbar {
+  height: 60px;
+  background: white;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 24px;
+  margin-bottom: 20px;
+}
+
+.topbar-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.topbar-status {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.topbar-status.online {
+  color: #2ecc71;
+}
+
+.topbar-status.offline {
+  color: #e74c3c;
+}
+
+.topbar-sync-btn {
+  background: #2ecc71;
+  color: white;
+  padding: 6px 14px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+.topbar-sync-btn:hover {
+  background: #27ae60;
+}
+
+.topbar-sync-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.nav-btn {
+  text-decoration: none;
+  color: #2c3e50;
+  font-size: 15px;
+  padding: 4px 10px;
+  border-radius: 6px;
+  transition: 0.2s;
+}
+
+.nav-btn:hover {
+  background: #ecf0f1;
+}
+
+/* === SUMMARY CARDS === */
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+  margin: 20px 0;
+}
+
+.summary-card {
+  background: white;
+  padding: 16px 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.06);
+}
+
+.summary-label {
+  font-size: 13px;
+  color: #7f8c8d;
+}
+
+.summary-value {
+  font-size: 22px;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+
+/* === STATION CARDS === */
+
+.station-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.station-card {
+  background: white;
+  padding: 18px;
+  border-radius: 12px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.06);
+  transition: 0.2s;
+}
+
+.station-card:hover {
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.station-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.station-title {
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.station-status {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.station-status.active {
+  color: #27ae60;
+}
+
+.station-status.inactive {
+  color: #7f8c8d;
+}
+
+.station-status.maintenance {
+  color: #f39c12;
+}
+
+.station-meta {
+  font-size: 13px;
+  margin-top: 8px;
+  color: #34495e;
+}
+
+.station-coords {
+  font-size: 12px;
+  color: #7f8c8d;
+}
+
+
+/* === MEASUREMENTS FEED === */
+
+.measurements-box {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.06);
+  overflow: hidden;
+}
+
+.measurements-header {
+  padding: 12px 18px;
+  font-size: 18px;
+  font-weight: 600;
+  border-bottom: 1px solid #ecf0f1;
+}
+
+.measurement-item {
+  padding: 12px 18px;
+  border-bottom: 1px solid #ecf0f1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.measurement-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.measurement-station {
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.measurement-time {
+  font-size: 12px;
+  color: #7f8c8d;
+}
+
+.pollutant-badge {
+  background: #ecf0f1;
+  padding: 4px 8px;
+  margin-left: 6px;
+  border-radius: 6px;
+  font-size: 12px;
+}
+
+
+/* === SCROLLBOX === */
+
+.measurements-list {
+  max-height: 350px;
+  overflow-y: auto;
+}
+
+/**/
+
+.filters-panel {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+}
+
+.filter-input {
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.filter-select {
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid #bbb;
+  background: white;
+  font-size: 14px;
+}
+
+.table td div {
+  margin-bottom: 2px;
+}
+
+.crud-wrapper {
+  max-width: 900px;
+  margin: 20px auto;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.crud-title {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+/* ACTION SELECTOR */
+.crud-select {
+  padding: 8px 12px;
+  font-size: 15px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin-bottom: 20px;
+}
+
+/* FORM */
+.crud-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.crud-input {
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.crud-btn {
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: none;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  color: white;
+}
+
+.crud-btn.create { background: #2ecc71; }
+.crud-btn.update { background: #f1c40f; color: #2c3e50; }
+.crud-btn.delete { background: #e74c3c; }
+.crud-btn.load { background: #3498db; }
+
+.crud-btn:hover { opacity: 0.9; }
+
+.crud-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.crud-table th, .crud-table td {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.crud-empty {
+  text-align: center;
+  color: #7f8c8d;
+  padding: 20px;
+}

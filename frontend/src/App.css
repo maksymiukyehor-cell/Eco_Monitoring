@@ -1,0 +1,41 @@
+.App {
+  min-height: 100vh;
+  background-color: #f8f9fa;
+}
+
+.container {
+  max-width: 1200px;
+}
+
+.table th {
+  font-size: 0.875rem;
+  white-space: nowrap;
+}
+
+.table td {
+  vertical-align: middle;
+}
+
+.table code {
+  background-color: #e9ecef;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.8rem;
+}
+
+.badge {
+  font-size: 0.75rem;
+}
+
+@media (max-width: 768px) {
+  .table {
+    font-size: 0.8rem;
+  }
+  
+  .badge {
+    font-size: 0.7rem;
+  }
+}
+.btn {
+  font-size: 0.875rem;
+}
