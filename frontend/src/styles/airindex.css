@@ -1,0 +1,43 @@
+.ai-card {
+  padding: 20px;
+  border-radius: 12px;
+  color: white;
+  margin-top: 20px;
+}
+
+.ai-good { background: #27ae60; }
+.ai-moderate { background: #f1c40f; }
+.ai-bad { background: #e67e22; }
+.ai-unhealthy { background: #c0392b; }
+
+.ai-value {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.ai-level {
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+
+.btn-main {
+  background: #3498db;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.btn-main:hover {
+  background: #2980b9;
+}
+
+.error-box {
+  margin-top: 10px;
+  padding: 10px;
+  background: #ffcccc;
+  color: #a00;
+  border-radius: 8px;
+}

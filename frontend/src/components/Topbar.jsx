@@ -41,6 +41,10 @@ function Topbar({ onSync, syncing }) {
         <Link to="/crud" className="nav-btn">
           CRUD
         </Link>
+
+        <Link to="/airindex" className="nav-btn">
+          Air Index
+        </Link>
       </div>
 
       <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>

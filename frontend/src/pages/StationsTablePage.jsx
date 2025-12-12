@@ -7,19 +7,15 @@ function StationsTablePage() {
   const [stations, setStations] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  // Фільтри
   const [cityFilter, setCityFilter] = useState("");
   const [statusFilter, setStatusFilter] = useState("all");
   const [nameFilter, setNameFilter] = useState("");
 
-  // Сортування
   const [sortField, setSortField] = useState("city_name");
   const [sortOrder, setSortOrder] = useState("asc");
 
-  // Список міст
   const [cities, setCities] = useState([]);
 
-  // Завантаження станцій
   const loadStations = useCallback(async () => {
     setLoading(true);
 
@@ -31,11 +27,9 @@ function StationsTablePage() {
 
     const data = await apiService.getStations(params);
 
-    // Генерація унікальних міст для дропбокса
     const uniqueCities = [...new Set(data.map((s) => s.city_name))].sort();
     setCities(uniqueCities);
 
-    // Сортування
     const sorted = [...data].sort((a, b) => {
       let x = a[sortField];
       let y = b[sortField];
@@ -51,7 +45,6 @@ function StationsTablePage() {
       return sortOrder === "asc" ? (x > y ? 1 : -1) : (x < y ? 1 : -1);
     });
 
-    // Фільтр по назві станції
     const filteredByName = sorted.filter((s) =>
       s.station_name.toLowerCase().includes(nameFilter.toLowerCase())
     );

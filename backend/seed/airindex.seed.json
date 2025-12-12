@@ -1,0 +1,24 @@
+[
+  {
+    "station_id": "TEST_STATION_001",
+    "datetime": "2025-01-01T10:00:00Z",
+    "values": {
+      "PM2.5": 45,
+      "PM10": 72,
+      "NO2": 135,
+      "SO2": 40,
+      "O3": 110
+    }
+  },
+  {
+    "station_id": "TEST_STATION_002",
+    "datetime": "2025-01-01T11:00:00Z",
+    "values": {
+      "PM2.5": 30,
+      "PM10": 55,
+      "NO2": 80,
+      "SO2": 65,
+      "O3": 90
+    }
+  }
+]

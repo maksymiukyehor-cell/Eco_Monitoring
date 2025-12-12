@@ -9,27 +9,21 @@ const api = axios.create({
   timeout: 15000,
 });
 
-// ==============================
-// STATIONS
-// ==============================
 
 export const apiService = {
   getStations: async (params = {}) => {
     const response = await api.get('/stations', { params });
-    return response.data.data;     // <-- масив станцій
+    return response.data.data;   
   },
 
   getStationById: async (id) => {
     const response = await api.get(`/stations/${id}`);
-    return response.data.data;     // <-- об'єкт станції
+    return response.data.data; 
   },
 
-  // ==============================
-  // MEASUREMENTS
-  // ==============================
   getMeasurements: async (params = {}) => {
     const response = await api.get('/measurements', { params });
-    return response.data.data;     // <-- масив вимірювань
+    return response.data.data; 
   },
 
   getLatestMeasurements: async () => {
@@ -44,17 +38,11 @@ export const apiService = {
     return response.data.data;
   },
 
-  // ==============================
-  // SAVE ECO BOT SYNC
-  // ==============================
   syncSaveEcoBot: async () => {
     const res = await api.get('/saveecobot/sync');
     return res.data;
   },
 
-  // ==============================
-  // HEALTH STATUS
-  // ==============================
   getHealth: async () => {
     try {
       const response = await api.get(`${API_ROOT}/health`);
@@ -64,10 +52,6 @@ export const apiService = {
       throw error;
     }
   },
-
-  // ==============================
-  // CRUD OPERATIONS FOR STATIONS
-  // ============================== 
 
   createStation: async (data) => {
     const res = await api.post("/stations", data);
@@ -82,6 +66,11 @@ export const apiService = {
   deleteStation: async (station_id) => {
     const res = await api.delete(`/stations/${station_id}`);
     return res.data;
+  },
+
+  calculateAirIndex: async (payload) => {
+    const response = await api.post("/airindex/calc", payload);
+    return response.data;
   },
 };
 

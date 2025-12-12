@@ -7,7 +7,8 @@
   "scripts": {
     "start": "node app.js",
     "dev": "nodemon app.js",
-    "test": "set NODE_OPTIONS=--experimental-vm-modules && jest --runInBand"
+    "test": "set NODE_OPTIONS=--experimental-vm-modules && jest --runInBand",
+    "seed:airindex": "node seed/seed-airindex.js"
   },
   "keywords": [],
   "author": "",
@@ -18,9 +19,11 @@
     "express": "^5.1.0",
     "helmet": "^8.1.0",
     "mongoose": "^8.19.1",
-    "node-fetch": "^3.3.2"
+    "node-fetch": "^3.3.2",
+    "react-toastify": "^11.0.5"
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.28.5",
     "jest": "^30.2.0",
     "nodemon": "^3.1.10",
     "supertest": "^7.1.4"

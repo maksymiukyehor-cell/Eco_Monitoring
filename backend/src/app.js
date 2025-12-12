@@ -9,6 +9,7 @@ import connectDB from './config/DATABASE.js';
 import stationsRoutes from './routes/station.js';
 import measurementsRoutes from './routes/measurement.js';
 import saveEcoBotRoutes from './routes/saveecobot.js';
+import airIndexRoutes from "./routes/airindex.js";
 
 dotenv.config(); 
 connectDB(); 
@@ -73,6 +74,7 @@ app.get('/health', async (req, res) => {
 app.use('/api/stations', stationsRoutes);
 app.use('/api/measurements', measurementsRoutes);
 app.use('/api/saveecobot', saveEcoBotRoutes);
+app.use("/api/airindex", airIndexRoutes);
 
 app.use((req, res) => {
   res.status(404).json({

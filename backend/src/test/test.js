@@ -56,22 +56,35 @@ describe('Measurements API', () => {
       expect(response.body.data).not.toBeNull();
     });
 
-    test('Має оновити теспературу окремого вимірювання за датою', async () => {
-    const response = await request(app)
-      .put(`/api/measurements/SAVEDNIPRO_20081`)
-      .send({
-        measurement_time: "2025-10-16T23:45:42Z",
-        pollutants: [
-            {
-                pollutant: "Temperature",
-                value: 88,
-                unit: "Celcius",
-                averaging_period: "5 minutes",
-                quality_flag: "valid"
-            }
-            ] 
+    test('Має оновити температуру окремого вимірювання за датою', async () => {
+
+      await request(app)
+        .post('/api/measurements')
+        .send({
+          station_id: "TEST_STATION_UPDATE",
+          measurement_time: "2025-01-01T10:00:00.000Z",
+          pollutants: [
+            { pollutant: "Temperature", value: 20, unit: "Celcius" }
+          ]
         })
-      .expect(200);
+        .expect(201);
+
+
+      const response = await request(app)
+        .put(`/api/measurements/TEST_STATION_UPDATE`)
+        .send({
+          measurement_time: "2025-01-01T10:00:00.000Z",
+          pollutants: [
+            {
+              pollutant: "Temperature",
+              value: 88,
+              unit: "Celcius",
+              averaging_period: "5 minutes",
+              quality_flag: "valid"
+            }
+          ]
+        })
+        .expect(200);
 
       expect(response.body.success).toBe(true);
       expect(response.body.data.pollutants[0].value).toBe(88);
